@@ -1,120 +1,85 @@
-/* Global Styles */
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #f8f9fa; /* Light background for the entire page */
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Diplomata+SC&family=Stoke:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Foldit:wght@100..900&display=swap");
+/* ==================================
+   Tools Page Styles
+   ================================== */
+
+/* General container and background for Tools page */
+.tools-container {
+  padding: 20px; /* Increased padding around the content */
+  display: flex;
+  flex-direction: column;
 }
 
-h2 {
-  color: #007bff; /* Primary color for headings */
+/* Title styling for Tools page */
+.tools-title {
+  font-family: "Foldit"; /* Custom font */
+  text-align: center; /* Center-align text */
+  font-size: 4rem; /* Larger font size for title */
+  margin-bottom: 50px; /* Increased space below title */
+  color: #cf1515; /* Dark text color */
+  animation: fadeIn 5s ease-out; /* Fade-in animation for the title */
 }
 
-/* Navbar Styles */
-.custom-navbar {
-  background-color: #ffffff; /* White background for the navbar */
-  padding: 1rem;
+/* Tool Cards Styling */
+.tool-card {
+  background: rgb(118, 0, 96); /* Transparent background with white tint */
+  border: none; /* No border */
+  border-radius: 20px; /* Rounded corners for cards */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25); /* Pronounced shadow for depth */
+  margin-bottom: 30px; /* Increased space below cards */
+  padding: 20px; /* Padding inside the card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scale and shadow effect on hover */
+  overflow: hidden; /* Ensure rounded corners are applied */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  animation: fadeIn 1.5s ease-in; /* Fade-in animation for the title */
 }
 
-.brand-title {
-  font-family: "Poppins", sans-serif;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #343a40; /* Dark color for brand title */
-  text-transform: uppercase;
-  animation: slideDown 1s ease-in-out;
+.tool-card:hover {
+  transform: scale(1.05); /* Slightly enlarge card on hover */
+  box-shadow: 0px 12px 24px rgba(198, 18, 18, 0.35); /* More intense shadow on hover */
 }
 
-.navbar-nav .nav-link {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.1rem;
-  color: #343a40; /* Dark color for navigation links */
-  margin-left: 15px;
-  transition: color 0.3s ease-in-out;
+.tool-card .card-title {
+  font-family: "Bodoni"; /* Custom font for titles */
+  font-size: 2rem; /* Larger font size for titles */
+  font-weight: bold; /* Bold text */
+  color: #044b50; /* Darker gray text color */
 }
 
-.navbar-nav .nav-link:hover {
-  color: #007bff; /* Primary color on hover */
-  text-decoration: none;
+.tool-card .card-text {
+  font-family: Arimo; /* Custom font for text */
+  font-size: 1.1rem; /* Slightly larger font size */
+  color: #7c8668; /* Medium gray text color */
 }
 
-.navbar-nav .nav-link.active {
-  color: #007bff; /* Primary color for active link */
-  font-weight: bold;
+/* Footer Styling for Tools page */
+.tools-footer {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+  color: #ffffff; /* White text color */
+  padding: 30px 0; /* Increased vertical padding */
+  text-align: center; /* Center-align text */
+  position: relative; /* Relative positioning for footer */
+  width: 100%; /* Full width */
+  margin-top: auto; /* Push footer to bottom */
 }
 
-/* Responsive Navbar */
-@media (max-width: 768px) {
-  .navbar-nav .nav-link {
-    margin-left: 0;
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  .brand-title {
-    font-size: 2rem;
-  }
+.tools-footer a {
+  color: rgb(252, 212, 105); /* Link color matching gradient */
+  margin: 0 15px; /* Increased space between links */
+  font-family: "Roboto", sans-serif; /* Custom font for links */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 1.2rem; /* Larger font size for links */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform effects */
 }
 
-/* Carousel Styles */
-.carousel-item img {
-  height: 40vh;
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  filter: brightness(70%);
-  transition: filter 0.5s ease-in-out;
+.tools-footer a:hover {
+  color: #f47c00; /* Change color on hover */
+  transform: scale(1.1); /* Slightly enlarge link on hover */
 }
 
-.carousel-item img:hover {
-  filter: brightness(100%);
-}
-
-.carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  padding: 20px;
-  border-radius: 10px;
-  animation: fadeIn 2s ease-in-out;
-}
-
-.carousel-caption h3 {
-  color: #f8f9fa; /* Light color for text on dark background */
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.carousel-caption p {
-  color: #f8f9fa; /* Light color for caption text */
-  font-size: 1.2rem;
-}
-
-.carousel .btn {
-  background-color: #ff5733; /* Button color */
-  border: none;
-  padding: 10px 20px;
-  font-size: 1.1rem;
-  color: white;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.carousel .btn:hover {
-  background-color: #c70039; /* Darker shade on hover */
-}
-
-/* Keyframe Animations */
+/* Animation for fade-in effect */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideDown {
   from {
     opacity: 0;
     transform: translateY(-20px);
@@ -125,334 +90,850 @@ h2 {
   }
 }
 
-/* Footer Styles */
-footer {
-  background-color: #212529; /* Dark background for footer */
-  color: white;
-  padding: 20px 0;
-}
+/* Navbar styles (already included in your setup) */
 
-footer a {
-  color: #f8f9fa; /* Light color for footer links */
-  text-decoration: none;
-  margin: 0 10px;
-  transition: color 0.3s ease-in-out;
-}
-
-footer a:hover {
-  color: #007bff; /* Primary color on hover */
-  text-decoration: underline;
-}
-
-/* Create Logo Page Styles */
+/* Container styling for Create Logo page */
 .create-logo-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f8f9fa; /* Light background for the page */
-  padding: 20px;
-}
-
-.split-box {
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff; /* White background for the box */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  width: 100%;
-  max-width: 800px;
-}
-
-.split-box > div {
-  flex: 1;
-  padding: 20px;
-}
-
-.split-left {
+  justify-content: center; /* Center alignment horizontally */
+  align-items: center; /* Center alignment vertically */
+  height: 100vh;
   background: linear-gradient(
     135deg,
-    #f2c14e,
-    #f7b12e
-  ); /* Gradient background */
+    #0f2027,
+    #203a43,
+    #2c5364
+  ); /* Deep gradient for a tech look */
+  color: #fff;
+  padding: 20px;
+}
+
+/* Split box styling */
+.split-box {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  background: rgba(255, 255, 255, 0.2); /* Slightly more opaque for contrast */
+  padding: 30px; /* Increase padding for a more spacious look */
+  border-radius: 15px; /* More rounded corners */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+  backdrop-filter: blur(15px); /* Stronger glassmorphism effect */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Border for a subtle definition */
+}
+
+/* Left and Right side styling */
+.split-left,
+.split-right {
+  width: 50%;
+  padding: 10px; /* Add padding for better spacing */
 }
 
 .split-left h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #333;
+  font-size: 3rem; /* Larger font size for more impact */
+  margin-bottom: 25px; /* Increased margin for better spacing */
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1.5px; /* Increase letter spacing for a modern look */
+  animation: fadeInDown 1.2s ease-out; /* Smooth fade-in animation */
 }
 
 .split-left p {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  color: #555;
-}
-
-.split-left .btn {
-  background-color: #007bff; /* Primary color for buttons */
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.split-left .btn:hover {
-  background-color: #0056b3; /* Darker shade on hover */
-}
-
-.split-right {
-  background: linear-gradient(
-    135deg,
-    #1f2638,
-    #313b5e
-  ); /* Gradient background */
-  color: #fff;
+  margin-bottom: 25px; /* More space for readability */
+  font-size: 1.3rem; /* Larger font for better readability */
+  line-height: 1.6; /* Improved line height for clarity */
+  font-family: "Roboto", sans-serif; /* Clean, modern font */
+  animation: fadeInUp 1.2s ease-out; /* Smooth fade-in animation */
 }
 
 .split-right .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 25px; /* Increase spacing between form elements */
 }
 
 .split-right label {
-  font-size: 1rem;
-  margin-bottom: 5px;
+  font-size: 1.2rem; /* Larger label font */
+  margin-bottom: 10px;
   display: block;
-  color: #ddd;
+  font-weight: bold; /* Bold for better emphasis */
+  animation: fadeInLeft 1.2s ease-out; /* Smooth fade-in animation */
 }
 
 .split-right input {
   width: 100%;
-  padding: 10px;
-  font-size: 1rem;
+  padding: 12px; /* More padding for a comfortable input field */
+  border-radius: 8px; /* More rounded input fields */
   border: none;
-  border-radius: 5px;
-  background-color: #fff;
-  color: #333;
+  font-size: 1.1rem; /* Slightly larger input font */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  animation: fadeInRight 1.2s ease-out; /* Smooth fade-in animation */
 }
 
-/* Responsive Layout */
-@media (min-width: 768px) {
-  .split-box {
-    flex-direction: row;
-  }
-
-  .split-left,
-  .split-right {
-    flex: 1;
-    max-width: 50%;
-  }
-}
-
-/* Tools Page Styles */
-.container {
-  background-color: #f8f9fa; /* Light background color for the page */
-  padding: 40px 0;
-}
-
-h2 {
-  color: #007bff; /* Primary color for headings */
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 40px;
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-.card {
+/* Button styles */
+.btn,
+.btn-submit {
+  padding: 12px 25px; /* Increase padding for a more prominent button */
+  background: linear-gradient(
+    135deg,
+    #ff7e5f,
+    #feb47b
+  ); /* Gradient background for buttons */
   border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin-bottom: 20px;
-}
-
-.card-body {
-  padding: 20px;
-  text-align: center;
-}
-
-.card-title {
-  font-size: 1.5rem;
-  color: #343a40;
-  margin-bottom: 10px;
-}
-
-.card-text {
-  font-size: 1rem;
-  color: #555;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-/* Footer Styles */
-footer {
-  background-color: #f1f1f1; /* Light background color for the footer */
-  padding: 20px 0;
-}
-
-footer a {
-  color: #007bff; /* Primary color for footer links */
-  text-decoration: none;
-  margin: 0 10px;
-  transition: color 0.3s ease-in-out;
-}
-
-footer a:hover {
-  color: #0056b3; /* Darker shade on hover */
-  text-decoration: underline;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .card {
-    margin-bottom: 15px;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-}
-
-/* Support Page Styles */
-.support-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f8f9fa; /* Light background color */
-  padding: 20px;
-}
-
-.support-card {
-  background-color: #ffffff; /* White background for the card */
-  border-radius: 15px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  padding: 30px;
-  text-align: center;
-  max-width: 500px;
-  margin: 0 auto;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.support-card h2 {
-  color: #007bff; /* Primary color for headings */
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.support-card p {
-  color: #555;
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-.support-card .btn-primary {
-  background-color: #007bff; /* Primary color for buttons */
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  border-radius: 8px; /* More rounded button corners */
+  transition: transform 0.3s ease, background 0.3s ease; /* Add transform transition */
 }
 
-.support-card .btn-primary:hover {
-  background-color: #0056b3; /* Darker shade on hover */
-  transform: translateY(-3px);
+.btn:hover,
+.btn-submit:hover {
+  background: linear-gradient(
+    135deg,
+    #ff6a4d,
+    #fda085
+  ); /* Slightly different gradient on hover */
+  transform: scale(1.05); /* Slight scale-up on hover */
 }
 
-/* Responsive Design */
+.btn-submit {
+  margin-top: 25px; /* Increased margin for spacing */
+  animation: bounce 2s infinite; /* Bounce animation for submit button */
+}
+
+/* Keyframes for Animations */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px); /* Higher bounce for a more dynamic feel */
+  }
+  60% {
+    transform: translateY(-8px); /* Adjusted bounce back */
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Animate from top */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Animate from bottom */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px); /* Animate from left */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px); /* Animate from right */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ==================================
+   Pricing Page Styles
+   ================================== */
+
+/* General container for Pricing page */
+.pricing-container {
+  padding: 50px; /* Padding around the content */
+  min-height: 100vh; /* Ensure the container takes full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align content horizontally */
+  background: none; /* Remove background */
+}
+
+/* Title and subtitle styling for Pricing page */
+.pricing-title {
+  font-family: "Poppins", sans-serif; /* Custom font */
+  text-align: center; /* Center-align text */
+  font-size: 3rem; /* Large font size for title */
+  margin-bottom: 20px; /* Space below title */
+  color: #333; /* Dark text color */
+  animation: fadeIn 2s ease-out; /* Fade-in animation for the title */
+}
+
+.pricing-subtitle {
+  font-family: "Open Sans", sans-serif; /* Custom font for subtitle */
+  text-align: center; /* Center-align text */
+  font-size: 1.2rem; /* Medium font size for subtitle */
+  margin-bottom: 50px; /* Increased space below subtitle */
+  color: #666; /* Medium gray text color */
+  animation: fadeIn 3s ease-out; /* Fade-in animation for the subtitle */
+}
+
+/* Card styling */
+.pricing-card {
+  background: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+  border: none; /* No border */
+  border-radius: 20px; /* Rounded corners for cards */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  margin-bottom: 30px; /* Space below cards */
+  padding: 20px; /* Padding inside the card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scale and shadow effect on hover */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  overflow: hidden; /* Ensure rounded corners are applied */
+}
+
+.pricing-card:hover {
+  transform: scale(1.05); /* Slightly enlarge card on hover */
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3); /* More intense shadow on hover */
+}
+
+/* Card title styling */
+.card-title {
+  font-family: "Roboto", sans-serif; /* Custom font for titles */
+  font-size: 2rem; /* Larger font size for titles */
+  font-weight: bold; /* Bold text */
+  color: #222; /* Darker gray text color */
+  margin-bottom: 15px; /* Space below title */
+}
+
+/* Card text styling */
+.pricing-card .card-text {
+  font-family: "Open Sans", sans-serif; /* Custom font for text */
+  font-size: 1rem; /* Regular font size */
+  color: #444; /* Medium gray text color */
+}
+
+.pricing-card .card-text h3 {
+  font-size: 2.5rem; /* Larger font size for price */
+  color: #fc9b04; /* Highlight color for price */
+  margin-bottom: 20px; /* Space below price */
+}
+
+/* List styling inside cards */
+.pricing-card ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+}
+
+.pricing-card li {
+  margin-bottom: 10px; /* Space between list items */
+  font-size: 1rem; /* Regular font size */
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================================
+   Support Page Styles
+   ================================== */
+
+/* General container for Support page */
+.support-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content vertically */
+  align-items: center; /* Center the content horizontally */
+  min-height: 100vh; /* Full viewport height */
+  padding: 50px; /* Space around the content */
+  background: linear-gradient(
+    135deg,
+    #1c1c1c,
+    #383838
+  ); /* Gradient background */
+  color: #fff; /* White text for contrast */
+}
+
+/* Title styling */
+.support-title {
+  font-family: "Poppins", sans-serif; /* Custom font */
+  font-size: 3rem; /* Large font size for title */
+  text-align: center; /* Center-align text */
+  margin-bottom: 20px; /* Space below title */
+  animation: fadeInDown 1.5s ease-out; /* Smooth fade-in from top */
+}
+
+/* Subtitle styling */
+.support-subtitle {
+  font-family: "Open Sans", sans-serif; /* Custom font for subtitle */
+  font-size: 1.2rem; /* Medium font size */
+  text-align: center; /* Center-align text */
+  margin-bottom: 30px; /* Space below subtitle */
+  animation: fadeInUp 1.5s ease-out; /* Smooth fade-in from bottom */
+}
+
+/* Button styling */
+.support-button {
+  padding: 15px 30px; /* More padding for a larger button */
+  background: #fc9b04; /* Bright button background */
+  border: none; /* No border */
+  border-radius: 30px; /* Fully rounded corners */
+  color: #fff; /* White text */
+  font-size: 1.2rem; /* Larger font size */
+  font-family: "Roboto", sans-serif; /* Custom font */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition for background and scale */
+  animation: pulse 2s infinite; /* Pulse animation for button */
+}
+
+.support-button:hover {
+  background: #f47c00; /* Darken button background on hover */
+  transform: scale(1.1); /* Slightly enlarge button on hover */
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(252, 155, 4, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(252, 155, 4, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(252, 155, 4, 0.7);
+  }
+}
+
+/* Responsive design adjustments */
 @media (max-width: 768px) {
-  .support-card {
-    padding: 20px;
+  .support-container {
+    padding: 30px;
   }
 
-  .support-card h2 {
-    font-size: 1.5rem;
+  .support-title {
+    font-size: 2.5rem;
   }
 
-  .support-card p {
+  .support-subtitle {
     font-size: 1rem;
   }
 
-  .support-card .btn-primary {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+  .support-button {
+    font-size: 1rem;
+    padding: 10px 20px;
   }
 }
-/* Global Styles */
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #f0f2f5;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+/* ==================================
+   Login Page Styles
+   ================================== */
 
-/* Login Card Styles */
+/* General container for Login page */
 .login-container {
-  width: 100%;
-  max-width: 400px;
-  padding: 2rem;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: #007bff;
-}
-
-.input-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  justify-content: center; /* Center the content vertically */
+  align-items: center; /* Center the content horizontally */
+  min-height: 100vh; /* Full viewport height */
+  padding: 50px; /* Space around the content */
+  background: linear-gradient(
+    135deg,
+    #1c1c1c,
+    #383838
+  ); /* Gradient background */
+  color: #fff; /* White text for contrast */
 }
 
-input {
-  padding: 0.75rem;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  width: 100%;
+/* Title styling */
+.login-title {
+  font-family: "Poppins", sans-serif; /* Custom font */
+  font-size: 3rem; /* Large font size for title */
+  text-align: center; /* Center-align text */
+  margin-bottom: 20px; /* Space below title */
+  animation: fadeInDown 1.5s ease-out; /* Smooth fade-in from top */
 }
 
+/* Button styling */
 .login-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 0.75rem;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  width: 100%;
+  padding: 15px 30px; /* More padding for a larger button */
+  background: #fc9b04; /* Bright button background */
+  border: none; /* No border */
+  border-radius: 30px; /* Fully rounded corners */
+  color: #fff; /* White text */
+  font-size: 1.2rem; /* Larger font size */
+  font-family: "Roboto", sans-serif; /* Custom font */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition for background and scale */
+  animation: pulse 2s infinite; /* Pulse animation for button */
 }
 
 .login-button:hover {
-  background-color: #0056b3;
+  background: #f47c00; /* Darken button background on hover */
+  transform: scale(1.1); /* Slightly enlarge button on hover */
 }
 
-#recaptcha-container {
-  margin-top: 1rem;
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(252, 155, 4, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(252, 155, 4, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(252, 155, 4, 0.7);
+  }
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 30px;
+  }
+
+  .login-title {
+    font-size: 2.5rem;
+  }
+
+  .login-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+/* ==================================
+   Home Page Styles
+   ================================== */
+
+/* General page container */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    rgba(252, 212, 105, 0.8),
+    rgba(31, 38, 56, 0.8)
+  ); /* Gradient background */
+  color: #fff; /* White text */
+  font-family: "Poppins", sans-serif; /* Custom font */
+}
+
+/* Navbar styling */
+.navbar-custom {
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  padding: 10px 20px;
+}
+
+/* Main content container */
+.main-content {
+  flex-grow: 1; /* Ensure main content grows to fill space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 50px 20px; /* Padding around content */
+}
+
+/* Welcome message */
+.welcome-message {
+  font-size: 2.5rem;
+  margin-bottom: 30px; /* Space below welcome message */
+  animation: fadeInUp 2s ease-out; /* Smooth fade-in from bottom */
+}
+
+/* Sign in button */
+.sign-in-button {
+  background: #fc9b04; /* Bright button background */
+  border: none; /* No border */
+  border-radius: 50px; /* Fully rounded corners */
+  color: #fff; /* White text */
+  font-size: 1.5rem;
+  padding: 15px 30px; /* More padding for a larger button */
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition for background and scale */
+  animation: pulse 2s infinite; /* Pulse animation for button */
+}
+
+.sign-in-button:hover {
+  background: #f47c00; /* Darken button background on hover */
+  transform: scale(1.1); /* Slightly enlarge button on hover */
+}
+/* Carousel container */
+.carousel-container {
+  margin: 30px auto; /* Center the carousel with auto margins */
+  width: 100%; /* Make carousel width fit the screen */
+  height: 10cm; /* Set the height of the carousel */
+  overflow: hidden; /* Hide overflow */
+  border-radius: 10px; /* Rounded corners */
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center the carousel */
+  align-items: center; /* Center content vertically */
+  position: relative; /* Ensure proper positioning of the carousel */
+}
+
+/* Carousel item styling */
+.carousel-item {
+  display: flex; /* Enable flexbox for items */
+  justify-content: center; /* Center items horizontally */
+  height: 100%; /* Ensure carousel item takes full height of the container */
+}
+
+.carousel-item img {
+  width: 100%; /* Ensure images fit container width */
+  height: 100%; /* Set height to 100% of the container */
+  object-fit: cover; /* Cover the container while maintaining aspect ratio */
+  background: linear-gradient(
+    135deg,
+    rgb(252, 212, 105) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  opacity: 0.85;
+  filter: brightness(80%); /* Darken image slightly */
+  transition: filter 0.5s ease-in-out; /* Smooth transition for filter */
+}
+
+.carousel-item img:hover {
+  filter: brightness(100%); /* Brighten image on hover */
+}
+
+/* Carousel caption styling */
+.carousel-caption h3 {
+  font-size: 1.5rem; /* Smaller font size for compact look */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+  animation: fadeInDown 2s ease-out; /* Smooth fade-in from top */
+}
+
+.carousel-caption p {
+  font-size: 1rem; /* Smaller font size */
+  margin-top: 10px;
+  animation: fadeIn 2.5s ease-out; /* Fade-in animation */
+}
+
+
+/* Link Tags */
+a {
+  text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+  text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* Footer styling */
+footer {
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  color: #ffffff; /* White text */
+  padding: 20px 0;
+  animation: fadeIn 4s ease-out; /* Slow fade-in animation */
+}
+
+footer button {
+  color: #fc9b04; /* Button link color */
+  font-size: 1rem;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scale */
+}
+
+footer button:hover {
+  color: #f47c00; /* Darken link color on hover */
+  transform: scale(1.1); /* Slightly enlarge link on hover */
+}
+
+/* Button Animations */
+.carousel-caption .btn,
+button {
+  background-color: #fcb69f;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(252, 155, 4, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(252, 155, 4, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(252, 155, 4, 0.7);
+  }
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .welcome-message {
+    font-size: 2rem;
+  }
+
+  .sign-in-button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1.2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.9rem;
+  }
+
+  .carousel-container {
+    width: 90%; /* Adjust carousel width for smaller screens */
+  }
+
+  .carousel-item img {
+    max-width: 100%; /* Ensure images fit within smaller screens */
+  }
+}
+/* Navbar styling */
+.navbar-custom {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)); /* Gradient background */
+  backdrop-filter: blur(10px); /* Blur effect for a frosted glass look */
+  transition: background 0.3s ease; /* Smooth background transition */
+}
+
+.navbar-custom:hover {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1)); /* Darker gradient on hover */
+}
+
+.navbar-brand {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem; /* Larger font size */
+  font-weight: bold; /* Bold text */
+  color: #fc9b04; /* Bright color */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.navbar-brand:hover {
+  color: #f47c00; /* Darker color on hover */
+}
+
+.nav-link {
+  font-family: "Poppins", sans-serif;
+  color: #fcb69f; /* Light color */
+  font-size: 1rem; /* Font size */
+  margin: 0 15px; /* Spacing between links */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and scale transition */
+}
+
+.nav-link:hover {
+  color: #fff; /* White color on hover */
+  transform: scale(1.1); /* Slightly enlarge link on hover */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle glow effect */
+}
+
+.navbar-text {
+  font-family: "Poppins", sans-serif;
+  color: #fff; /* White text */
+  margin: 0 10px; /* Margin around text */
+  font-size: 1rem; /* Font size */
+}
+
+.navbar-text img {
+  border: 2px solid #fc9b04; /* Border around profile picture */
+  transition: border-color 0.3s ease; /* Smooth border color transition */
+}
+
+.navbar-text img:hover {
+  border-color: #f47c00; /* Darker border color on hover */
+}
+
+.button-outline-light {
+  border: 2px solid #fc9b04; /* Button border */
+  color: #fc9b04; /* Button text color */
+  font-size: 1rem; /* Font size */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth background and text color transition */
+}
+
+.button-outline-light:hover {
+  background-color: #fc9b04; /* Button background color on hover */
+  color: #fff; /* Button text color on hover */
+  transform: scale(1.1); /* Slightly enlarge button on hover */
+  box-shadow: 0 0 10px rgba(252, 155, 4, 0.5); /* Glow effect on hover */
+}
+/* TermsAndConditions.css */
+
+.terms-conditions-container {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 5px 5px 0 0;
+}
+
+header h1 {
+  margin: 0;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+section p {
+  margin: 0 0 10px;
+}
+
+a {
+  color: #fc9b04;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 0 0 5px 5px;
+}
+
+footer p {
+  margin: 0;
+}
+/* PrivacyPolicy.css */
+.privacy-policy {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.privacy-policy h1 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.privacy-policy h2 {
+  font-size: 1.5em;
+  color: #555;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.privacy-policy p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 15px;
 }

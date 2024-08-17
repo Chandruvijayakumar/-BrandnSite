@@ -1,19 +1,18 @@
+// src/pages/Support.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../App.css"; // Import the CSS file
+import "../App.css"; // Import the App.css file to apply styles
 
 const Support = () => {
   const navigate = useNavigate();
 
   return (
     <div className="support-container">
-      <div className="support-card">
-        <h2>Support</h2>
-        <p>For support, please log in.</p>
-        <button onClick={() => navigate("/login")} className="btn btn-primary">
-          Go to Login
-        </button>
-      </div>
+      <h2 className="support-title">Support</h2>
+      <p className="support-subtitle">For support, please log in.</p>
+      <button className="support-button" onClick={() => navigate("/login")}>
+        Go to Login
+      </button>
     </div>
   );
 };

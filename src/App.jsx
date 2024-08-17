@@ -5,8 +5,11 @@ import Home from "./pages/Home";
 import Tools from "./pages/Tools";
 import Support from "./pages/Support";
 import Login from "./pages/Login";
-import CreateLogo from "./pages/CreateLogo"; // Import the CreateLogo component
+import CreateLogo from "./pages/CreateLogo";
+import Pricing from "./pages/Pricing";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import "bootstrap/dist/css/bootstrap.min.css";
+import TermsAndConditions from "./pages/TermsAndConditions";
 
 function App() {
   return (
@@ -14,9 +17,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tools" element={<Tools />} />
+        <Route path="/pricing" element={<Pricing />} />
         <Route path="/support" element={<Support />} />
         <Route path="/login" element={<Login />} />
         <Route path="/create-logo" element={<CreateLogo />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsAndConditions />} />{" "}
+        {/* Add Terms and Conditions route */}
       </Routes>
     </Router>
   );

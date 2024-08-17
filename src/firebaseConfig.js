@@ -4,11 +4,9 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
-  signInWithPhoneNumber,
-  RecaptchaVerifier,
+  signOut,
 } from "firebase/auth";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCC_y7E-pb4zxBt_rgrbgQH4vC1C3kIN5o",
   authDomain: "brand-9d562.firebaseapp.com",
@@ -19,15 +17,8 @@ const firebaseConfig = {
   measurementId: "G-CYZL1XWPRH",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-export {
-  auth,
-  provider,
-  signInWithPopup,
-  signInWithPhoneNumber,
-  RecaptchaVerifier,
-};
+export { auth, provider, signInWithPopup, signOut };
